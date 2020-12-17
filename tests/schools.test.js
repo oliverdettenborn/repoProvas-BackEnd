@@ -33,3 +33,25 @@ describe('GET /getAllSchoolsInformations', () => {
 
   });
 });
+
+describe('GET /getTypeTest', () => {
+  it ('should return status 200', async () => {
+    const response = await supertest(app).get('/api/getTypeTest');
+
+    expect(response.status).toBe(200);
+    expect(response.body[0]).toHaveProperty('id');
+    expect(response.body[0]).toHaveProperty('name');
+    expect(response.body.length).toBe(6);
+  });
+});
+
+describe('GET /getPeriod', () => {
+  it ('should return status 200', async () => {
+    const response = await supertest(app).get('/api/getPeriod');
+
+    expect(response.status).toBe(200);
+    expect(response.body[0]).toHaveProperty('id');
+    expect(response.body[0]).toHaveProperty('name');
+    expect(response.body.length).toBe(3);
+  });
+});

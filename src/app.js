@@ -12,6 +12,9 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-app.get('/api/getAllSchoolsInformations', SchoolsController.getAll)
+app.get('/api/getAllSchoolsInformations', SchoolsController.getAll);
+app.get('/api/getTypeTest', SchoolsController.getTypeTest);
+app.get('/api/getPeriod', SchoolsController.getPeriod);
+
 
 module.exports = app;
