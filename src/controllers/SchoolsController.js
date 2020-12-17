@@ -1,8 +1,6 @@
-const universitiesRepository = require('../repository/universities');
-const subjectsRepository = require('../repository/subjects');
-const teachersRepository = require('../repository/teachers');
-const testsRepository = require('../repository/tests');
-
+const universitiesRepository = require('../repository/universitiesRepository');
+const subjectsRepository = require('../repository/subjectsRepository');
+const teachersRepository = require('../repository/teachersRepository');
 
 async function getAll(req,res){
   try{
@@ -23,7 +21,7 @@ async function getAll(req,res){
 
 async function getTypeTest(req,res){
   try{
-    const typeTest = await testsRepository.getTypesOfTests();
+    const typeTest = await subjectsRepository.getTypesOfTests();
     res.status(200).send(typeTest);
   }catch(e){
     console.log(e);
@@ -33,7 +31,7 @@ async function getTypeTest(req,res){
 
 async function getPeriod(req,res){
   try{
-    const period = await testsRepository.getOptionsPeriod();
+    const period = await subjectsRepository.getOptionsPeriod();
     res.status(200).send(period);
   }catch(e){
     console.log(e);
