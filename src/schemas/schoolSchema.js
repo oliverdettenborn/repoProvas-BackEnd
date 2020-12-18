@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 const newUniversitySchema = Joi.object({
-  initial: Joi.string().min(3).max(10).uppercase().required(),
+  initial: Joi.string().min(2).max(10).uppercase().required(),
   fullName:  Joi.string().required()
 })
 
