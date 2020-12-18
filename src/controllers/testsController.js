@@ -20,7 +20,7 @@ async function createNewTest(req,res){
 async function getAllBySubjectId(req,res){
   try{
     const { idUniversity, idSubject } = req.params;
-    const tests = await testsRepository.findBySubjectId(idUniversity, idSubject);
+    const tests = await testsRepository.findBySubjectId(+idUniversity, +idSubject);
     res.status(200).send(tests);
   }catch(e){
     console.log(e);

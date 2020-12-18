@@ -11,18 +11,20 @@ var corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-const SchoolsController = require('./controllers/SchoolsController');
-const TestsController = require('./controllers/TestsController');
+const schoolsController = require('./controllers/schoolsController');
+const testsController = require('./controllers/testsController');
 
 
-app.get('/api/getAllSchoolsInformations', SchoolsController.getAll);
-app.get('/api/getTypeTest', SchoolsController.getTypeTest);
-app.get('/api/getPeriod', SchoolsController.getPeriod);
+app.get('/api/getAllSchoolsInformations', schoolsController.getAll);
+app.get('/api/getTypeTest', schoolsController.getTypeTest);
+app.get('/api/getPeriod', schoolsController.getPeriod);
 
-app.get('/api/tests/:idUniversity/subjects/:idSubject', TestsController.getAllBySubjectId);
-app.post('/api/tests/create', TestsController.createNewTest);
+app.post('/api/university/create', schoolsController.newUniversity);
+app.post('/api/subject/create', schoolsController.newSubject);
+app.post('/api/teacher/create', schoolsController.newTeacher);
 
-///
 
+app.get('/api/tests/:idUniversity/subjects/:idSubject', testsController.getAllBySubjectId);
+app.post('/api/tests/create', testsController.createNewTest);
 
 module.exports = app;
