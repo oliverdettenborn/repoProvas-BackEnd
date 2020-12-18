@@ -19,7 +19,10 @@ app.get('/api/getAllSchoolsInformations', SchoolsController.getAll);
 app.get('/api/getTypeTest', SchoolsController.getTypeTest);
 app.get('/api/getPeriod', SchoolsController.getPeriod);
 
-app.post('/api/createTest', TestsController.createNewTest);
+app.get('/api/tests/:idUniversity/subjects/:idSubject', TestsController.getAllBySubjectId);
+app.post('/api/tests/create', TestsController.createNewTest);
+
+///
 
 
 module.exports = app;

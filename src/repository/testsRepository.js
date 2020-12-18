@@ -14,6 +14,26 @@ async function createTest(data){
   return result.rows[0];
 }
 
+async function findBySubjectId(idUniversity, idSubject){
+  const result = await db.query(
+    `
+      SELECT 
+        tests.id, tests.name, tests."idPeriod", "period".name AS "period", 
+        tests."idTypeTest", type_test.name AS "typeTest", tests."idTeacher", 
+        teachers.name AS teacher, url
+      FROM tests
+      JOIN "period" ON "period".id = tests."idPeriod"
+      JOIN type_test ON type_test.id = tests."idTypeTest"
+      JOIN teachers ON teachers.id = tests."idTeacher"
+      WHERE "idUniversity"=$1 AND "idSubject"=$2
+      ORDER BY tests."idTeacher", tests."idPeriod", tests."idTypeTest"
+    `,
+    [idUniversity, idSubject]
+  )
+  return result.rows;
+}
+
 module.exports = {
-  createTest
+  createTest,
+  findBySubjectId
 }

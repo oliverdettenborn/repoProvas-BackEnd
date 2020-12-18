@@ -2,8 +2,6 @@ const testsRepository = require('../repository/testsRepository');
 const testsSchemas = require('../schemas/testsSchemas');
 const sanitazeHtml = require('../utils/sanitizeInput');
 
-
-
 async function createNewTest(req,res){
   try{
     const { error } = testsSchemas.newTestSchema.validate(req.body);
@@ -19,6 +17,18 @@ async function createNewTest(req,res){
   }
 }
 
+async function getAllBySubjectId(req,res){
+  try{
+    const { idUniversity, idSubject } = req.params;
+    const tests = await testsRepository.findBySubjectId(idUniversity, idSubject);
+    res.status(200).send(tests);
+  }catch(e){
+    console.log(e);
+    res.sendStatus(500);
+  }
+}
+
 module.exports = {
-  createNewTest
+  createNewTest,
+  getAllBySubjectId
 }

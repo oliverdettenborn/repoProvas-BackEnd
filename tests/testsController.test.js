@@ -9,11 +9,11 @@ const cleanDataBase = async() => {
 beforeAll(cleanDataBase);
 
 afterAll(async () => {
-  await cleanDataBase;
+  await cleanDataBase();
   db.end();
 });
 
-describe('POST /createTest', () => {
+describe('POST /tests/create', () => {
   it ('should return status 201 when sucess to create new test', async () => {
     
     const body = {
@@ -26,7 +26,7 @@ describe('POST /createTest', () => {
       url: 'https://dbdiagram.io/home'
     }
 
-    const response = await supertest(app).post('/api/createTest').send(body);
+    const response = await supertest(app).post('/api/tests/create').send(body);
 
     expect(response.status).toBe(201);
     expect(response.body).toMatchObject(body);
@@ -44,7 +44,7 @@ describe('POST /createTest', () => {
       url: 'https://dbdiagram.io/home'
     }
 
-    const response = await supertest(app).post('/api/createTest').send(body);
+    const response = await supertest(app).post('/api/tests/create').send(body);
     expect(response.status).toBe(422);
   });
 
@@ -60,7 +60,7 @@ describe('POST /createTest', () => {
       url: '<script>https://dbdiagram.io/home<script>'
     }
 
-    const response = await supertest(app).post('/api/createTest').send(body);
+    const response = await supertest(app).post('/api/tests/create').send(body);
     expect(response.status).toBe(422);
   });
 
@@ -86,10 +86,26 @@ describe('POST /createTest', () => {
       url: 'https://dbdiagram.io/home'
     }
 
-    const response = await supertest(app).post('/api/createTest').send(body);
+    const response = await supertest(app).post('/api/tests/create').send(body);
     expect(response.status).toBe(201);
     expect(response.body).toMatchObject(bodyResponse);
     expect(response.body).toHaveProperty('id');
   });
 });
 
+describe('GET /tests/:idUniversity/subjects/:idSubject', () => {
+  it ('should return status 200', async () => {
+    const response = await supertest(app).get('/api/tests/1/subjects/1');
+
+    expect(response.status).toBe(200);
+    expect(response.body[0]).toHaveProperty('id');
+    expect(response.body[0]).toHaveProperty('name');
+    expect(response.body[0]).toHaveProperty('idPeriod');
+    expect(response.body[0]).toHaveProperty('period');
+    expect(response.body[0]).toHaveProperty('idTypeTest');
+    expect(response.body[0]).toHaveProperty('typeTest');
+    expect(response.body[0]).toHaveProperty('idTeacher');
+    expect(response.body[0]).toHaveProperty('teacher');
+    expect(response.body[0]).toHaveProperty('url');
+  });
+});
