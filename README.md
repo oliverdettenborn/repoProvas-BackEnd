@@ -4,7 +4,7 @@
 
 # RepoProvas (BackEnd)
 
- ![license](https://img.shields.io/github/license/thaliadettenborn/repoProvas-BackEnd?style=flat-square) ![total lines](https://img.shields.io/tokei/lines/github/thaliadettenborn/repoProvas-BackEnd) ![last commit](https://img.shields.io/github/last-commit/thaliadettenborn/repoProvas-BackEnd?style=flat-square) ![issues](https://img.shields.io/github/package-json/v/thaliadettenborn/repoProvas-BackEnd?style=flat-square) ![forks](https://img.shields.io/github/forks/thaliadettenborn/repoProvas-BackEnd?style=flat-square) 
+ ![license](https://img.shields.io/github/license/oliverdettenborn/repoProvas-BackEnd?style=flat-square) ![total lines](https://img.shields.io/tokei/lines/github/oliverdettenborn/repoProvas-BackEnd) ![last commit](https://img.shields.io/github/last-commit/oliverdettenborn/repoProvas-BackEnd?style=flat-square) ![issues](https://img.shields.io/github/package-json/v/oliverdettenborn/repoProvas-BackEnd?style=flat-square) ![forks](https://img.shields.io/github/forks/oliverdettenborn/repoProvas-BackEnd?style=flat-square) 
 
 <br><br>
 ## About
@@ -575,8 +575,8 @@ The application layout is available on Heroku:
 <p align='center'>
   <img src="https://avatars0.githubusercontent.com/u/70967247?s=460&u=0684339f0717ae41ce18689351f0215fdf270590&v=4" width="100px;" style="border-radius: 50%;"/>
   <br><br>
-  Made by Thalia Roberta Dettenborn 👋🏽 Get in Touch!<br>
-  <a href="https://www.linkedin.com/in/thaliarobertadettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-  <a href="mailto:thalia.born@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
-  <a href="https://github.com/thaliadettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
+  Made by Oliver Dettenborn 👋🏽 Get in Touch!<br>
+  <a href="https://www.linkedin.com/in/oliverdettenborn/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+  <a href="mailto:oliver.dettenborn@gmail.com"><img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
+  <a href="https://github.com/oliverdettenborn"><img src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white" /></a>
 </p>
